@@ -38,13 +38,13 @@ async function handleSubmit(e) {
     .then(data => {
       const hits = data.hits;
 
-      gallery.innerHTML = ''; 
+      gallery.innerHTML = '';
       if (hits.length === 0) {
         loadBtn.classList.remove('is-hidden');
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
         );
-        loadBtn.classList.add('is-hidden')
+        loadBtn.classList.add('is-hidden');
       } else {
         gallery.insertAdjacentHTML('beforeend', createGallery(hits));
         lightbox = new SimpleLightbox('.gallery a', {});
